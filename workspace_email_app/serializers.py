@@ -8,13 +8,11 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'username', 'password')
 
 class EmailSerializer(serializers.ModelSerializer):
-    receiver = UserSerializer(many=True, read_only=True)
     class Meta: 
         model = Email
         fields = ('id', 'title', 'content', 'sender', 'receiver')
 
 class ChatmessageSerializer(serializers.ModelSerializer):
-    receiver = UserSerializer(many=True, read_only=True)
     class Meta: 
         model = Chatmessage
         fields = ('id', 'content', 'sender', 'receiver')
