@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Inbox from './Inbox'
 
 export default class Login extends Component {
     state = {
         userRoster: [],
         username: '',
         password: '',
+        currentUser: {},
         valid: false
     }
     componentDidMount = () => {
@@ -31,7 +33,8 @@ export default class Login extends Component {
             console.log(users[i])
             if(this.state.username === users[i].username) {
                 if(this.state.password === users[i].password) {
-                    return alert('Login successful')
+                    this.setState({currentUser: users[i], valid: true})
+                    return
                 } else {
                     return alert('Incorrect password')
                 }
@@ -42,12 +45,16 @@ export default class Login extends Component {
     render() {
         return (
             <div className='App'>
-                <h1>Login</h1>
-                <form onSubmit={this.validate}>
-                    <input type='text' name='username' placeholder='Username' onChange={this.handleUsernameChange}/>
-                    <input type='password' name='password' placeholder='Password' onChange={this.handlePasswordChange}/>
-                    <input type='submit' value='Login'/>
-                </form>
+                {this.state.valid? <Inbox currentUser={this.state.currentUser}/> :
+                <div>
+                    <h1>Login</h1>
+                    <form onSubmit={this.validate}>
+                        <input type='text' name='username' placeholder='Username' onChange={this.handleUsernameChange}/>
+                        <input type='password' name='password' placeholder='Password' onChange={this.handlePasswordChange}/>
+                        <input type='submit' value='Login'/>
+                    </form>
+                </div>
+                }
             </div>
         )
     }
