@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 export default class Inbox extends Component {
+    
     render() {
-        let emails = this.state.emails.map((email) => {
-            
+        let emails = this.props.emails.map((email) => {
             console.log(email)
             return (
                 <span><p><strong>{email.title}</strong> {email.sender.name}</p></span>
