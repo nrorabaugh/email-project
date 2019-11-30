@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Inbox from './Inbox'
+import Account from './Account'
 
 export default class Login extends Component {
     state = {
@@ -42,7 +42,7 @@ export default class Login extends Component {
     render() {
         return (
             <div className='App'>
-                {this.state.valid? <Inbox currentUser={this.state.currentUser}/> :
+                {this.state.valid? <Account currentUser={this.state.currentUser}/> :
                 <div>
                     <h1>Login</h1>
                     <form onSubmit={this.validate}>
