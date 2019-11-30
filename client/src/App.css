@@ -22,5 +22,24 @@
 }
 
 .inbox {
-  background-color: red;
+  background-color: blue;
+}
+
+.page {
+  position: relative;
+}
+
+.switch {
+  position: absolute;
+  right: 20px;
+}
+
+.nav {
+  position: absolute;
+  left: 0;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
 }

@@ -22,8 +22,9 @@ export default class Account extends Component {
     render() {
         return (
             <div>
-                <h1>Welcome {this.props.currentUser.name}</h1>
-                <div>
+            <h1>Welcome {this.props.currentUser.name}</h1>
+            <div className='page'>
+                <div className='nav'>
                     <ul>
                         <button><li>Inbox</li></button>
                         <button><li>Sent</li></button>
@@ -31,9 +32,10 @@ export default class Account extends Component {
                         <button><li>Trash</li></button>
                     </ul>
                 </div>
-                <div>
+                <div className='switch'>
                     <Inbox emails={this.state.emails}/>
                 </div>
+            </div>
             </div>
         )
     }
