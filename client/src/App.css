@@ -30,8 +30,10 @@
 }
 
 .switch {
+  width: 84vw;
   position: absolute;
   right: 20px;
+  text-align: left;
 }
 
 .nav {
@@ -42,4 +44,9 @@
 .nav ul {
   display: flex;
   flex-direction: column;
+  list-style: none;
+}
+
+.nav button {
+  border: red solid 1px;
 }
