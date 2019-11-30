@@ -19,18 +19,15 @@ export default class Login extends Component {
     handleUsernameChange = (evt) => {
         let username = evt.target.value
         this.setState({username})
-        console.log(this.state.username)
     }
     handlePasswordChange = (evt) => {
         let password = evt.target.value
-        this.setState({password})
-        console.log(this.state.password)
+        this.setState({password})  
     }
     validate = (evt) => {
         evt.preventDefault()
         let users = this.state.userRoster
-        for(let i=0; i<users.length; i++){
-            console.log(users[i])
+        for(let i=0; i<users.length; i++){ 
             if(this.state.username === users[i].username) {
                 if(this.state.password === users[i].password) {
                     this.setState({currentUser: users[i], valid: true})

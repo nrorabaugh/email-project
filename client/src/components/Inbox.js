@@ -10,7 +10,7 @@ export default class Inbox extends Component {
         .then((emails) => {
             for(let i = 0; i < emails.data.length; i++) {
                 let inbox = this.state.emails
-                if(emails.data[i].receiver === this.props.currentUser){
+                if(emails.data[i].receiver === this.props.currentUser.id){
                     inbox.unshift(emails.data[i])
                     this.setState({emails: inbox})
                 }
@@ -18,6 +18,13 @@ export default class Inbox extends Component {
         })
     }
     render() {
+        let emails = this.state.emails.map((email) => {
+            console.log(this.state.emails)
+            console.log(email)
+            return (
+                <span><p><strong>{email.title}</strong> {email.sender.name}</p></span>
+            )
+        })
         return (
             <div>
                 <h1>Welcome {this.props.currentUser.name}</h1>
@@ -29,7 +36,9 @@ export default class Inbox extends Component {
                         <button><li>Trash</li></button>
                     </ul>
                 </nav>
-                
+                <div>
+                    {emails}
+                </div>
             </div>
         )
     }
