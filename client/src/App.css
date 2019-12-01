@@ -50,3 +50,12 @@
 .nav button {
   border: red solid 1px;
 }
+
+.emailComp {
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  height: 60vh;
+}
