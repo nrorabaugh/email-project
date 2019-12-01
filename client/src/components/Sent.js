@@ -10,7 +10,7 @@ export default class Inbox extends Component {
         .then((emails) => {
             for(let i = 0; i < emails.data.length; i++) {
                 let inbox = this.state.emails
-                if(emails.data[i].receiver === this.props.currentUser.id){
+                if(emails.data[i].sender === this.props.currentUser.id){
                     inbox.unshift(emails.data[i])
                     this.setState({emails: inbox})
                     console.log('emails: '+ this.state.emails)
