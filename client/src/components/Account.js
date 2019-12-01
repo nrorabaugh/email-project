@@ -1,24 +1,11 @@
 import React, { Component } from 'react'
 import Inbox from './Inbox'
-import Axios from'axios'
 
 export default class Account extends Component {
     state = {
-        emails: []
+        component: 'Inbox'
     }
-    componentDidMount = () => {
-        Axios.get('/api/v1/email')
-        .then((emails) => {
-            for(let i = 0; i < emails.data.length; i++) {
-                let inbox = this.state.emails
-                if(emails.data[i].receiver === this.props.currentUser.id){
-                    inbox.unshift(emails.data[i])
-                    this.setState({emails: inbox})
-                    console.log('emails: '+ this.state.emails)
-                }
-            }
-        })
-    }
+    
     render() {
         return (
             <div>
@@ -33,7 +20,7 @@ export default class Account extends Component {
                     </ul>
                 </div>
                 <div className='switch'>
-                    <Inbox emails={this.state.emails}/>
+                    {this.state.component ==='Inbox'? <Inbox currentUser={this.props.currentUser}/> : null}
                 </div>
             </div>
             </div>

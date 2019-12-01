@@ -27,7 +27,7 @@ export default class Inbox extends Component {
         })
         return (
             <div className='inbox'>
-                <h1>Emails</h1>
+                <h1>Sent</h1>
                 {emails}
             </div>
         )
