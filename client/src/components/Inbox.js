@@ -10,19 +10,20 @@ export default class Inbox extends Component {
         .then((emails) => {
             for(let i = 0; i < emails.data.length; i++) {
                 let inbox = this.state.emails
-                if(emails.data[i].receiver === this.props.currentUser.id){
-                    inbox.unshift(emails.data[i])
-                    this.setState({emails: inbox})
-                    console.log('emails: '+ this.state.emails)
+                let receiver = emails.data[i].receiver.split(', ')
+                for(let i=0; i<receiver.length; i++) {
+                    if(receiver[i] === this.props.currentUser.username){
+                        inbox.unshift(emails.data[i])
+                        this.setState({emails: inbox})
+                    }
                 }
             }
         })
     }
     render() {
         let emails = this.state.emails.map((email) => {
-            console.log(email)
             return (
-                <span><p><strong>{email.title}</strong> {email.sender.name}</p></span>
+                <button className='singleEmail' key={email.id}><span><p><strong>{email.title}</strong> {email.sender}</p></span></button>
             )
         })
         return (

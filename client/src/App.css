@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+html {
+  font-family: Helvetica, sans-serif;
+}
+
 .App-logo {
   height: 40vmin;
 }
@@ -22,7 +26,8 @@
 }
 
 .inbox {
-  background-color: blue;
+  background-color: gainsboro;
+  padding: 10px;
 }
 
 .page {
@@ -58,4 +63,10 @@
 
 .body {
   height: 60vh;
+}
+
+.singleEmail {
+  width: 100%;
+  padding: 0 10px;
+  text-align: left;
 }

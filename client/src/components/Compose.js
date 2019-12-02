@@ -5,7 +5,7 @@ export default class Inbox extends Component {
     mail = (evt) => {
         evt.preventDefault()
         let email = {
-            sender: this.props.currentUser.id,
+            sender: this.props.currentUser.username,
             receiver: evt.target.receiver.value,
             title: evt.target.title.value,
             content: evt.target.content.value

@@ -9,8 +9,8 @@ class User(models.Model):
         return self.name
 
 class Email(models.Model):
-    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='emailFrom')
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='emailTo')
+    sender = models.CharField(max_length=255)
+    receiver = models.TextField(blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
 
@@ -18,8 +18,8 @@ class Email(models.Model):
         return self.title
 
 class Chatmessage(models.Model):
-    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='chatFrom')
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='chatTo')
+    sender = models.CharField(max_length=255)
+    receiver = models.TextField(blank=True)
     content = models.TextField(blank=True)
 
     def __str__(self):
