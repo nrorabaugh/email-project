@@ -12,7 +12,7 @@ export default class Account extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='back'>
             <h1>Welcome {this.props.currentUser.name}</h1>
             <div className='page'>
                 <div className='nav'>

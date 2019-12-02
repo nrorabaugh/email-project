@@ -13,8 +13,9 @@ export default class Inbox extends Component {
             for(let i = 0; i < emails.data.length; i++) {
                 let inbox = this.state.emails
                 let receiver = emails.data[i].receiver.split(', ')
-                for(let i=0; i<receiver.length; i++) {
-                    if(receiver[i] === this.props.currentUser.username){
+                for(let j=0; j<receiver.length; j++) {
+                    if(receiver[j] === this.props.currentUser.username){
+                        console.log(receiver[j])
                         inbox.unshift(emails.data[i])
                         this.setState({emails: inbox})
                     }
