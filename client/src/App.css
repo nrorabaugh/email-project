@@ -3,8 +3,8 @@
 }
 
 html {
-  background-color: navy;
-  color: navy;
+  background-color: white;
+  color: rgb(0,0,185);
 }
 
 .App-logo {
@@ -26,14 +26,35 @@ html {
   color: #09d3ac;
 }
 
+.emailText {
+  background-color: white;
+  color: rgb(0,0,153);
+}
+
+.toFrom {
+  color: rgb(143, 143, 143);
+}
+
+.emailText p {
+  padding: 0 40px 40px 40px;
+}
+
+button:active,
+button:focus,
+button:focus:active {
+  background-image: none;
+  outline: 0;
+  box-shadow: none;
+}
+
 .back h1 {
-  background-color: gainsboro;
+  background-color: rgb(0,0,185);
   margin: 0 0 40px 0;
   padding: 20px;
+  color: white;
 }
 
 .inbox {
-  background-color: gainsboro;
   padding: 10px;
 }
 
@@ -43,7 +64,10 @@ html {
 }
 
 .page h1 {
+  background-color: rgb(230,230,230);
+  outline: 1px solid rgb(230,230,230);
   margin: 0;
+  color: rgb(127, 127, 127);
 }
 
 .switch {
@@ -63,7 +87,6 @@ ul {
   left: 0;
   margin: 0;
   padding: 0;
-  background-color: inherit;
 }
 
 .nav ul {
@@ -78,8 +101,8 @@ ul {
   margin: 0;
   padding: 6px 6px 6px 40px;
   border: 0;
-  background-color: gainsboro;
-  color: navy;
+  background-color: rgb(230, 230, 230);
+  color: rgb(0,0,185);
 }
 
 .emailComp {
@@ -96,11 +119,12 @@ ul {
   padding: 0 10px;
   text-align: left;
   border: 0;
-  outline: 1px solid gray;
-  color: navy;
+  outline: 1px solid rgb(230,230,230);;
+  color: rgb(0, 0, 185);
 }
 
 .singleEmail p {
   margin: 5px;
   font-size: 12pt;
 }
+

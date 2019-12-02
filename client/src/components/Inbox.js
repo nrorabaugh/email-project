@@ -15,7 +15,6 @@ export default class Inbox extends Component {
                 let receiver = emails.data[i].receiver.split(', ')
                 for(let j=0; j<receiver.length; j++) {
                     if(receiver[j] === this.props.currentUser.username){
-                        console.log(receiver[j])
                         inbox.unshift(emails.data[i])
                         this.setState({emails: inbox})
                     }
@@ -32,7 +31,7 @@ export default class Inbox extends Component {
     render() {
         let emails = this.state.emails.map((email) => {
             return (
-                <button className='singleEmail' key={email.id} onClick={this.singleEmail}><span><p id={email.id}><strong>{email.title}</strong> {email.sender}</p></span></button>
+                <button className='singleEmail'  key={email.id} onClick={this.singleEmail}><span key={email.id}><p id={email.id}><strong>{email.title}</strong> {email.sender}</p></span></button>
             )
         })
         return (

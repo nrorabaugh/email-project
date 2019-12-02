@@ -7,6 +7,8 @@ export default class Account extends Component {
         component: 'Inbox'
     }
     shiftComponent = (evt) => {
+        let single = ''
+        this.setState({single})
         let component = evt.target.innerHTML
         this.setState({component})
     }
