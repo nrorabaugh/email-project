@@ -140,11 +140,12 @@ ul {
   border-radius: 6px;
 }
 
-.click button{
-  background-color: lightgray;
-}
-
 .nav #compose:hover {
   background-color: rgb(189,61,61);
   cursor: pointer;
+}
+
+.nav button:hover {
+ background-color: lightgray;
+ cursor: pointer;
 }
