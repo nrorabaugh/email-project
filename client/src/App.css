@@ -34,10 +34,12 @@ html {
 
 .toFrom {
   color: rgb(143, 143, 143);
+  padding: 0 40px 40px 40px;
 }
 
-.emailText p {
+.content {
   padding: 0 40px 40px 40px;
+  margin: 0;
 }
 
 button:active,
