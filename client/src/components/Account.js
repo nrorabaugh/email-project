@@ -7,7 +7,11 @@ export default class Account extends Component {
         component: 'Inbox'
     }
     shiftComponent = (evt) => {
+        let old = document.getElementsByClassName('click')[0]
+        old.classList.remove('click')
+        console.log(evt.target)
         let component = evt.target.innerHTML
+        evt.target.className = 'click'
         this.setState({component})
     }
     render() {
@@ -18,7 +22,7 @@ export default class Account extends Component {
                 <div className='nav'>
                     <button id='compose' onClick={this.shiftComponent}>Compose</button>
                     <ul>
-                        <button id='inbox' onClick={this.shiftComponent}><li>Inbox</li></button>
+                        <button id='inbox' className='click' onClick={this.shiftComponent}><li>Inbox</li></button>
                         <button id='sent' onClick={this.shiftComponent}><li>Sent</li></button>
                         <button onClick={this.shiftComponent}><li>Contacts</li></button>
                         <button onClick={this.shiftComponent}><li>Trash</li></button>
