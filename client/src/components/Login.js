@@ -50,6 +50,7 @@ export default class Login extends Component {
                         <input type='password' name='password' placeholder='Password' onChange={this.handlePasswordChange}/>
                         <input type='submit' value='Login'/>
                     </form>
+                    <p>New user?</p><button>Create Account</button>
                 </div>
                 }
             </div>

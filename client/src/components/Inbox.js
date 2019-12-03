@@ -35,8 +35,14 @@ export default class Inbox extends Component {
     }
     render() {
         let emails = this.state.emails.map((email) => {
+            let arr = email.content.split('')
+            let newArr = []
+            for(let i=0; i<80; i++){
+                newArr.push(arr[i])
+            }
+            let string = newArr.join('')
             return (
-                <button className='singleEmail'  key={email.id} onClick={this.singleEmail}><span key={email.id}><p id={email.id}><strong>{email.title}</strong> {email.sender}</p></span></button>
+            <button className='singleEmail'  key={email.id} onClick={this.singleEmail}><span key={email.id}><p id={email.id}><strong>{email.title}</strong> {email.sender} <span className='contentPrev'>{string}</span></p></span></button>
             )
         })
         return (
