@@ -18,6 +18,10 @@ export default class Inbox extends Component {
                 }
             }
         })
+        let sent = document.getElementById('sent')
+        sent.addEventListener('click', () => {
+            this.setState({single: ''})
+        })
     }
     singleEmail = (evt) => {
         Axios.get(`/api/v1/email/${evt.target.id}`)
