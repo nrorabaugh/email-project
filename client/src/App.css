@@ -149,3 +149,7 @@ ul {
  background-color: lightgray;
  cursor: pointer;
 }
+
+button:hover {
+  cursor: pointer;
+}
