@@ -33,7 +33,7 @@ export default class Inbox extends Component {
         })
         return (
             <div>
-                {this.state.single? <Email email={this.state.single}/> :
+                {this.state.single? <Email email={this.state.single} currentUser={this.props.currentUser}/> :
                     <div className='inbox'>
                     <h1>Emails</h1>
                     {emails}
