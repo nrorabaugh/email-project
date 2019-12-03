@@ -18,8 +18,8 @@ export default class Account extends Component {
                 <div className='nav'>
                     <button id='compose' onClick={this.shiftComponent}>Compose</button>
                     <ul>
-                        <button onClick={this.shiftComponent}><li>Inbox</li></button>
-                        <button onClick={this.shiftComponent}><li>Sent</li></button>
+                        <button id='inbox' onClick={this.shiftComponent}><li>Inbox</li></button>
+                        <button id='sent' onClick={this.shiftComponent}><li>Sent</li></button>
                         <button onClick={this.shiftComponent}><li>Contacts</li></button>
                         <button onClick={this.shiftComponent}><li>Trash</li></button>
                     </ul>

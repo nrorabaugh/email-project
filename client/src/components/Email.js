@@ -21,7 +21,6 @@ export default class Email extends Component {
     }
 
     render() {
-        console.log(this.props.email)
         return (
             <div className='emailText'>
                 <h1>{this.props.email.title}</h1>
