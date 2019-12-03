@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 import Email from './Email'
 
-export default class Inbox extends Component {
+export default class Sent extends Component {
     state = {
         emails: []
     }
@@ -14,7 +14,6 @@ export default class Inbox extends Component {
                 if(emails.data[i].sender === this.props.currentUser.username){
                     inbox.unshift(emails.data[i])
                     this.setState({emails: inbox})
-                    console.log('emails: '+ this.state.emails)
                 }
             }
         })
