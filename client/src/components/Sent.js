@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import Email from './Email'
 
 export default class Inbox extends Component {
     state = {
@@ -18,17 +19,26 @@ export default class Inbox extends Component {
             }
         })
     }
+    singleEmail = (evt) => {
+        Axios.get(`/api/v1/email/${evt.target.id}`)
+        .then((single) => {
+            this.setState({single: single.data})
+        })
+    }
     render() {
         let emails = this.state.emails.map((email) => {
-            console.log(email)
             return (
-                <span><p><strong>{email.title}</strong> {email.sender.name}</p></span>
+                <button className='singleEmail'  key={email.id} onClick={this.singleEmail}><span key={email.id}><p id={email.id}><strong>{email.title}</strong> {email.sender}</p></span></button>
             )
         })
         return (
-            <div className='inbox'>
-                <h1>Sent</h1>
-                {emails}
+            <div>
+                {this.state.single? <Email email={this.state.single}/> :
+                    <div className='inbox'>
+                    <h1>Emails</h1>
+                    {emails}
+                    </div>
+                }
             </div>
         )
     }
