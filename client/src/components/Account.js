@@ -7,8 +7,6 @@ export default class Account extends Component {
         component: 'Inbox'
     }
     shiftComponent = (evt) => {
-        let single = ''
-        this.setState({single})
         let component = evt.target.innerHTML
         this.setState({component})
     }
@@ -18,8 +16,8 @@ export default class Account extends Component {
             <h1>Welcome {this.props.currentUser.name}</h1>
             <div className='page'>
                 <div className='nav'>
+                    <button id='compose' onClick={this.shiftComponent}>Compose</button>
                     <ul>
-                        <button onClick={this.shiftComponent}><li>Compose</li></button>
                         <button onClick={this.shiftComponent}><li>Inbox</li></button>
                         <button onClick={this.shiftComponent}><li>Sent</li></button>
                         <button onClick={this.shiftComponent}><li>Contacts</li></button>
