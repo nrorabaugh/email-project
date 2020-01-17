@@ -37,7 +37,7 @@ export default class Sent extends Component {
             }
             let string = newArr.join('')
             return (
-            <button className='singleEmail'  key={email.id} onClick={this.singleEmail}><span key={email.id}><p id={email.id}><strong>{email.title}</strong> {email.receiver} <span className='contentPrev'>{string}</span></p></span></button>
+            <button className='singleEmail' id={email.id} key={email.id} onClick={this.singleEmail}><span id={email.id} key={email.id}><p id={email.id}><strong id={email.id}>{email.title}</strong> {email.receiver} <span id={email.id} className='contentPrev'>{string}</span></p></span></button>
             )
         })
         return (

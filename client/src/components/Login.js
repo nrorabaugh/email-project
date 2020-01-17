@@ -46,7 +46,7 @@ export default class Login extends Component {
                 <div>
                     <h1>Login</h1>
                     <form onSubmit={this.validate}>
-                        <input type='text' name='username' placeholder='Username' onChange={this.handleUsernameChange}/>
+                        <input type='text' name='username' placeholder='Username' /*autocomplete='off'*/ onChange={this.handleUsernameChange}/>
                         <input type='password' name='password' placeholder='Password' onChange={this.handlePasswordChange}/>
                         <input type='submit' value='Login'/>
                     </form>

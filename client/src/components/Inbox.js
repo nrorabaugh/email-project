@@ -42,7 +42,21 @@ export default class Inbox extends Component {
             }
             let string = newArr.join('')
             return (
-            <button className='singleEmail'  key={email.id} onClick={this.singleEmail}><span key={email.id}><p id={email.id}><strong>{email.title}</strong> {email.sender} <span className='contentPrev'>{string}</span></p></span></button>
+            <button className='singleEmail' id={email.id} key={email.id} onClick={this.singleEmail}>
+                <span display='inline' id={email.id}>
+                    <p style={{color:'rgb(0,0,185)'}}>
+                        <strong id={email.id}>{email.title}</strong>
+                    </p>
+                    <p style={{color:'rgb(0,0,185)'}}>
+                        {email.sender}
+                    </p>
+                    <span className='contentPrev'>
+                        <p id={email.id} className='contentPrev'>
+                            {string}
+                        </p>
+                    </span>
+                </span>
+            </button>
             )
         })
         return (

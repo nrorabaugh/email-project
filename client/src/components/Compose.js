@@ -15,12 +15,14 @@ export default class Inbox extends Component {
     
     render() {
         return (
-            <form className='emailComp' onSubmit={this.mail}>
-                <input type='text' name='receiver' placeholder='To:'/>
-                <input type='text' name='title' placeholder='Title'/>
-                <textarea className='body' type='text' name = 'content'/>
-                <input type='submit' value='Send'/>
-            </form>
+            <div>
+                <form className='emailComp' id='email' onSubmit={this.mail}>
+                    <input className='compField'type='text' name='receiver' autocomplete='off' placeholder='To:'/>
+                    <input className='compField'type='text' name='title' autocomplete='off' placeholder='Title'/>
+                    <textarea className='compField'className='body' type='text' name = 'content'/>
+                </form>
+                <button className='send' type='submit' form='email' value='Send'>Send</button>
+            </div>
         )
     }
 }
