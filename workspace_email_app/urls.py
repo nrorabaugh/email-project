@@ -7,7 +7,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register('user', views.UserView)
 router.register('email', views.EmailView)
-router.register('chatmessage', views.ChatmessageView)
+# router.register('chatmessage', views.ChatmessageView)
 
 urlpatterns = [
     re_path('', include(router.urls))

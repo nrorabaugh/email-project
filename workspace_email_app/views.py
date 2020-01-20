@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializers import UserSerializer, EmailSerializer, ChatmessageSerializer
-from .models import User, Email, Chatmessage
+from .serializers import UserSerializer, EmailSerializer
+from .models import User, Email
 
 class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -10,6 +10,6 @@ class EmailView(viewsets.ModelViewSet):
     queryset = Email.objects.all()
     serializer_class = EmailSerializer
 
-class ChatmessageView(viewsets.ModelViewSet):
-    queryset = Chatmessage.objects.all()
-    serializer_class = ChatmessageSerializer
+# class ChatmessageView(viewsets.ModelViewSet):
+#     queryset = Chatmessage.objects.all()
+#     serializer_class = ChatmessageSerializer
